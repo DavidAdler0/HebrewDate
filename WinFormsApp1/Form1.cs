@@ -59,7 +59,7 @@ namespace HebrewDate
                 "27" => "שבעה ועשרים יום",
                 "28" => "שמנה ועשרים יום",
                 "29" => "תשעה ועשרים יום",
-                "30" => "יום שלשים לחדש פלוני שהוא ראש חדש פלוני"
+                "30" => $"יום שלשים לחדש {comboBox3.SelectedItem.ToString()} שהוא ראש חודש {comboBox3.Items[comboBox3.SelectedIndex +1].ToString()}"
             };
             return dayMonthMessage;
         }
@@ -71,7 +71,7 @@ namespace HebrewDate
             {
                 "תשפ\"ד" => "שמנים וארבע",
                 "תשפ\"ה" => "שמנים וחמש",
-                "תשפ\"ן" => "שמנים ושש",
+                "תשפ\"ו" => "שמנים ושש",
                 "תשפ\"ז" => "שמנים ושבע",
                 "תשפ\"ח" => "שמנים ושמנה",
                 "תשפ\"ט" => "שמנים ותשע",
@@ -87,7 +87,8 @@ namespace HebrewDate
             string dayMonthMessage = GenerateMessageDayMonth();
             string yearMessage = GenerateYearMessage();
             string month = comboBox3.SelectedItem.ToString();
-            string result = $"ב{dayMessage} בשבת {dayMonthMessage} לירח {month} בשנת חמשת אלפים ושבע מאות ו{yearMessage} לבריאת העולם";
+            
+            string result = comboBox2.SelectedItem.ToString() == "30" ? $"ב{dayMessage} בשבת {dayMonthMessage} בשנת חמשת אלפים ושבע מאות ו{yearMessage} לבריאת העולם" : $"ב{dayMessage} בשבת {dayMonthMessage} לירח {month} בשנת חמשת אלפים ושבע מאות ו{yearMessage} לבריאת העולם";
             return result;
         }
 
