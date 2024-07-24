@@ -87,7 +87,7 @@ namespace HebrewDate
             string dayMonthMessage = GenerateMessageDayMonth();
             string yearMessage = GenerateYearMessage();
             string month = comboBox3.SelectedItem.ToString();
-            string result = $"לבריאת העולם {yearMessage}בשנת חמשת אלפים ושבע מאות ו {month} לירח {dayMonthMessage} {dayMessage}ב";
+            string result = $"ב{dayMessage} בשבת {dayMonthMessage} לירח {month} בשנת חמשת אלפים ושבע מאות ו{yearMessage} לבריאת העולם";
             return result;
         }
 
